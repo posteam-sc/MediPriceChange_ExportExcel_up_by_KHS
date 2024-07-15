@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DC2B409-C6FF-4C06-BBF4-9A8C6343002D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MediPriceChange</RootNamespace>
+    <AssemblyName>MediPriceChange</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.4\lib\net40\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\x64\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adjustment.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdjustmentType.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttachGiftForTransaction.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Authorize.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AverageMonthlySaleReportBrandId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AverageMonthlySaleReportByBrandIdAndCounterId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AverageMonthlySaleReportByDateTime_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AverageMonthlySaleReportCounterId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AverageMonthlySaleReport_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsignmentCounter.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsignmentSettlement.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsignmentSettlementDetail.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Counter.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerType.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailyRecord.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteLog.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExchangeRateForTransaction.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Expense.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseCategory.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseDetail.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetConsignmentProduct_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCustomerSaleByCuId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCustomerSaleById_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetGWPSetQtyAndAmount_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetGWPTransactions_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveliesSaleByCTypte1_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveliesSaleByCTypte_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveltiesSale_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveltySaleByBrandId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveltySaleByBrandId_Result_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveltySaleByCType_Result_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveltySaleByDate_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveltySaleByDate_Result_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNoveltySaleDate_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProductReport_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProfitAndLossByBrandId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProfitAndLossByCouterId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProfitAndLossByProductId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProfitandLoss_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSaleSpecialPromotionByCustomerId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSaleSpecialPromotionSegmentByCustomerId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTotalAmountForCash_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTotalAmountForPrepaid_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTotalAmountForRefund_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTotalTransactionQtyAndQty_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTransactionByGroup_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftCard.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftCardInTransaction.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftSystem.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftSystemInTransaction.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainPurchase.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberCardRule.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberType.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetIncomeReportByYearMonth_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoveltySystem.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentType.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pjForm.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pjForms_Localization.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Point_History.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductInNovelty.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPriceChange.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductQuantityChange.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReportByBId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReportByCIdAndBId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReportByCId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReportBySCIdAndCIdAndBId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReportBySCIdAndCId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSubCategory.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseDeleteLog.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseDetail.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseDetailInTransaction.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseDiscountReport_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReport_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefundItemList_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantTable.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManagement.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleBreakDownByRangeWithSaleTrueValue_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleBreakDownByRangeWithUnitValue_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleBreakDownBySegmentWithSaleTrueValue_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleBreakDownBySegmentWithUnitValue_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleItemListByDate_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectItemListByDateForItemSummary_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectItemListByDate_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectTaxesListByDate_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shop.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPDetail.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockInDetail.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockInHeader.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockTransaction.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tax.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Top100SaleItemList_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Townshipdb.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetail.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetailByItem_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetailReportByBIdAndCIdAndSCId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetailReportByBIdAndCId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetailReportByBId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetailReportByCId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetailReportBySCIdAndCId_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetailReport_Result.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unit.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitConversion.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsePrePaidDebt.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WrapperItem.cs">
+      <DependentUpon>PosEntities.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <EntityDeploy Include="PosEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PosEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PosEntities.edmx.diagram">
+      <DependentUpon>PosEntities.edmx</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PosEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PosEntities.edmx</DependentUpon>
+      <LastGenOutput>PosEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PosEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PosEntities.edmx</DependentUpon>
+      <LastGenOutput>PosEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
